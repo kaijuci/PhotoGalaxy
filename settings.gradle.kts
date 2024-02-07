@@ -31,3 +31,4 @@ buildCache {
 rootProject.name = "Photo Galaxy"
 include(":app")
 include(":core:data")
+include(":core:network")
