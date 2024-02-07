@@ -17,7 +17,8 @@ dependencyResolutionManagement {
     }
 }
 
-val buildCacheDirPath = System.getenv("BUILD_CACHE_DIR") ?: System.getProperty("user.home") + "/.photo-galaxy-build-cache"
+val buildCacheDirPath =
+    System.getenv("BUILD_CACHE_DIR") ?: (System.getProperty("user.home") + "/.photo-galaxy-build-cache")
 
 buildCache {
     println("Using build cache directory: $buildCacheDirPath")
@@ -29,3 +30,4 @@ buildCache {
 
 rootProject.name = "Photo Galaxy"
 include(":app")
+include(":core:data")
