@@ -1,0 +1,28 @@
+name: PhotoGalaxy CI Pipeline
+
+model: kaijuSense
+
+event:
+  pull_request:
+    branches:
+      - main
+    state:
+      - open
+      - synchronize
+    filter:
+      - "**/*.md"
+      - "**/*.txt"
+
+steps:
+  - name: Lint
+    description: Lint the code
+    targets:
+      - "auto-sense"
+
+  - name: Build
+    targets:
+      - "auto-sense"
+
+  - name: Unit Tests
+    targets:
+      - "auto-sense"
